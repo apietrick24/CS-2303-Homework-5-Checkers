@@ -158,7 +158,7 @@ bool Tests::testGamePieceToChar(){
 bool Tests::testBoardInit(){
 	printf("Starting testBoardInit (testing Reading File and Board Init)\n");
 	bool testPasses = true;
-	Board* theBoard = new Board("testingGame1.txt", "testGame1WriteFile.txt");
+	Board* theBoard = new Board("Testing Input and Output Files/testingGame1.txt", "Testing Input and Output Files/testGame1WriteFile.txt");
 	theBoard->displayBoard();
 
 	if (theBoard->getGamePiece(0, 4)->toChar() != 'b' && theBoard->getGamePiece(1, 1)->toChar() != 'b' && theBoard->getGamePiece(2, 2)->toChar() != 'b'){
@@ -191,7 +191,7 @@ bool Tests::testBoardDisplay(){
 	printf("Starting testBoardDisplay\n");
 	bool testPasses = true;
 
-	Board* theBoard = new Board("testingGame1.txt", "testGame1WriteFile.txt");
+	Board* theBoard = new Board("Testing Input and Output Files/testingGame1.txt", "Testing Input and Output Files/testGame1WriteFile.txt");
 
 	theBoard->displayBoard();
 
@@ -232,14 +232,14 @@ bool Tests::testBoardFileWriting(){
 	bool pass = true;
 
 	std::ofstream fp;
-	fp.open ("testOutputFile.txt", std::ios::out | std::ios::trunc);
+	fp.open ("Testing Input and Output Files/testOutputFile.txt", std::ios::out | std::ios::trunc);
 	fp.clear();
 	fp << "Write";
 	fp.close();
 
 	char store [15];
 
-	FILE* fp2 = fopen("testOutputFile.txt", "r"); //read the file
+	FILE* fp2 = fopen("Testing Input and Output Files/testOutputFile.txt", "r"); //read the file
 	fscanf(fp2, "%s", store);
 
 	if (strcmp("Write", store) != 0){
@@ -253,11 +253,11 @@ bool Tests::testBoardFileWriting(){
 	fclose(fp2);
 
 	std::ofstream fp3;
-	fp3.open ("testOutputFile.txt", std::ios::out | std::ios::trunc);
+	fp3.open ("Testing Input and Output Files/testOutputFile.txt", std::ios::out | std::ios::trunc);
 	fp3.clear();
 	fp3.close();
 
-	FILE* fp4 = fopen("testOutputFile.txt", "r"); //read the file
+	FILE* fp4 = fopen("Testing Input and Output Files/testOutputFile.txt", "r"); //read the file
 	fscanf(fp4, "%s", store);
 
 	if (strcmp("Write", store) != 0){
@@ -284,7 +284,7 @@ bool Tests::testComputeMoves(){
 	printf("Starting testComputeMoves\n");
 	bool testPasses = true;
 
-	Board* theBoard = new Board("testingGame1.txt", "testGame1WriteFile.txt");
+	Board* theBoard = new Board("Testing Input and Output Files/testingGame1.txt", "Testing Input and Output Files/testGame1WriteFile.txt");
 
 	if(!theBoard->computerMove(true, false, false)){
 		testPasses = false;
@@ -301,7 +301,7 @@ bool Tests::testComputeMoves(){
 		printf("\tpassed testComputeMoves1Black(Move) subtest\n");
 	}
 
-	Board* theBoard2 = new Board("testingGame2.txt", "testGame1WriteFile.txt");
+	Board* theBoard2 = new Board("Testing Input and Output Files/testingGame2.txt", "Testing Input and Output Files/testGame1WriteFile.txt");
 
 	if(theBoard2->computerMove(true, false, false)){
 		testPasses = false;
@@ -331,7 +331,7 @@ bool Tests::testComputeMoves(){
 bool Tests::testIsMoveValid(){
 	printf("Starting testIsMoveValid\n");
 
-	Board* theBoard = new Board("testingGame1.txt", "testGame1WriteFile.txt");
+	Board* theBoard = new Board("Testing Input and Output Files/testingGame1.txt", "Testing Input and Output Files/testGame1WriteFile.txt");
 
 	bool testPasses = true;
 
@@ -378,7 +378,7 @@ bool Tests::testIsMoveValid(){
 bool Tests::testExecuteGivenMove(){
 	printf("Starting testExecuteGivenMove\n");
 
-	Board* theBoard = new Board("testingGame1.txt", "testGame1WriteFile.txt");
+	Board* theBoard = new Board("Testing Input and Output Files/testingGame1.txt", "Testing Input and Output Files/testGame1WriteFile.txt");
 
 	bool testPasses = true;
 
@@ -414,7 +414,7 @@ bool Tests::testExecuteGivenMove(){
 bool Tests::testPromote(){
 	printf("Starting testPromote\n");
 
-	Board* theBoard = new Board("testingGame2.txt", "testGame1WriteFile.txt");
+	Board* theBoard = new Board("Testing Input and Output Files/testingGame2.txt", "Testing Input and Output Files/testGame1WriteFile.txt");
 
 	bool testPasses = true;
 
@@ -447,7 +447,7 @@ bool Tests::testPromote(){
 bool Tests::testHasWon(){
 	printf("Starting testHasWon\n");
 
-	Board* theBoard = new Board("gameState.txt", "testGame1WriteFile.txt");
+	Board* theBoard = new Board("Testing Input and Output Files/gameState.txt", "Testing Input and Output Files/testGame1WriteFile.txt");
 
 	bool testPasses = true;
 
@@ -494,7 +494,7 @@ bool Tests::testHasWon(){
 bool Tests::testGetGamePiece(){
 	printf("Starting testGetGamePiece\n");
 
-	Board* theBoard = new Board("testingGame2.txt", "testGame1WriteFile.txt");
+	Board* theBoard = new Board("Testing Input and Output Files/testingGame2.txt", "Testing Input and Output Files/testGame1WriteFile.txt");
 
 	bool testPasses = true;
 
